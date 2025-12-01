@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藤井 アタル - ポートフォリオ</title>
+    <style>
+        /* グローバルリセットと基本スタイル */
+        :root {
+            --main-color: #007bff; /* 青系：モダンで清潔感のある色 */
+            --text-color: #333;
+            --bg-light: #f8f9fa; /* 薄いグレー */
+            --bg-white: #ffffff;
+            --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            transition: background-color 0.3s;
+        }
+
+        /* ヘッダー/ナビゲーション */
+        header {
+            background-color: var(--bg-white);
+            color: var(--text-color);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--main-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 5px 10px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--main-color);
+            border-bottom: 2px solid var(--main-color);
+        }
+
+        /* セクション共通スタイル */
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        section:nth-child(even) {
+            background-color: var(--bg-light);
+            box-shadow: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--main-color);
+            border-bottom: 3px solid var(--main-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+
+        /* ヒーローセクション */
+        #hero {
+            background: linear-gradient(135deg, var(--main-color), #0056b3);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* 自己紹介セクション */
+        #about p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .gaku-chika-box {
+            background-color: #e9ecef; /* ハイライト */
+            border-left: 4px solid var(--main-color);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 4px;
+        }
+
+        .gaku-chika-box h3 {
+            color: var(--main-color);
+            margin-top: 0;
+        }
+
+        /* スキルセクション */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .skill-item {
+            background-color: var(--bg-white);
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.2s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-item h4 {
+            color: var(--main-color);
+            margin-top: 0;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: var(--bg-white);
+            color: var(--text-color);
+            border-top: 1px solid #ddd;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Ataru's Portfolio</a>
+            <ul>
+                <li><a href="#about">自己紹介</a></li>
+                <li><a href="#skills">スキル</a></li>
+                <li><a href="#projects">プロジェクト</a></li>
+                <li><a href="#contact">コンタクト</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>藤井 アタル</h1>
+            <p>情報系大学〇〇学部 3年</p>
+            <p>「学びを社会に活かす」ことに情熱を持つエンジニア志望</p>
+        </section>
+
+        <section id="about">
+            <h2>自己紹介</h2>
+            <p>
+                情報系大学に在籍しており、特にWeb開発とデータ分析に興味があります。新しい技術を学ぶことに積極的で、学んだ知識を具体的な成果として形にすることを目指しています。常に目標を設定し、計画的に行動することで、困難な課題も着実にクリアしていくことを得意としています。
+            </p>
+
+            <div class="gaku-chika-box">
+                <h3>💡 学生時代に力を入れたこと（課題解決力と継続的な努力）</h3>
+                <p>
+                    高校時代、成績向上を目標に計画的な学習に取り組みました。特に苦手だった英語を克服するため、毎日30分の単語学習と週1回の過去問演習を習慣化しました。
+                    また、模試の結果を分析し、弱点を明確にして重点的に復習することで効率を高めました。さらに、友人と勉強会を開き、互いに問題を出し合うことで理解を深めました。
+                </p>
+                <p>
+                    こうした取り組みの結果、英語の偏差値を半年で15上げ、学年順位も大きく向上しました。**この経験から、課題を分析し、継続的に努力する力と、周囲と協力して学ぶ姿勢を身につけました。**
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>スキルセット</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>プログラミング</h4>
+                    <p>Python, Java, JavaScript, C</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Web技術</h4>
+                    <p>HTML, CSS, React(学習中), Node.js</p>
+                </div>
+                <div class="skill-item">
+                    <h4>データベース</h4>
+                    <p>SQL (MySQL, PostgreSQL)</p>
+                </div>
+                <div class="skill-item">
+                    <h4>ツール・その他</h4>
+                    <p>Git, Linux, AWS (初級)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>プロジェクト</h2>
+            <p>現在、代表的なプロジェクトを整理・掲載準備中です。主な実績は以下の通りです。</p>
+            <ul>
+                <li>**Webアプリケーション開発:** チームでの学内向けToDoリストアプリ開発（React/Node.js使用）</li>
+                <li>**データ分析:** 〇〇に関するデータセットを用いた機械学習モデルの構築</li>
+                <li>**個人制作:** 卒業制作に向けたポートフォリオCMSの設計・プロトタイプ作成</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>コンタクト</h2>
+            <p>私のスキルや取り組みにご興味をお持ちいただけましたら、お気軽にご連絡ください。</p>
+            <p>Email: example@example.com</p>
+            <p>GitHub: [GitHubアカウントへのリンク]</p>
+            <p>SNS: [SNSアカウントへのリンク]</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 藤井 アタル. All rights reserved.
+    </footer>
+
+</body>
+</html>
